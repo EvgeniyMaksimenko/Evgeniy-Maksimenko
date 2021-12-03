@@ -1,0 +1,29 @@
+import java.util.*;
+public class MyClass {
+
+    public static int rand(){
+        return (int) (Math.random()*9);
+    }
+
+    public static void main(String args[]) {
+
+        List<Integer> list = new ArrayList<Integer>();
+        for(int i=0;i<25;i++){
+            list.add(rand());
+        }
+        System.out.println("List:");
+        System.out.println(list);
+
+        Set<Integer> set = new HashSet<>(list);
+        System.out.println("Set:");
+        System.out.println(set);
+
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(Integer number : set){
+            map.put(list.indexOf(number), number);
+        }
+        System.out.println("Map:");
+        System.out.println(map);
+
+    }
+}
